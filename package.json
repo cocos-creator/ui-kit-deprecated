@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/gamedev-js/ui-kit.js/issues",
   "dependencies": {
-    "memop": "^1.6.0"
+    "engine-3d": "^0.4.0"
   },
   "devDependencies": {
     "fs-jetpack": "^0.13.0",

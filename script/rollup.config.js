@@ -27,8 +27,8 @@ module.exports = {
   ],
   moduleName,
   banner,
-  external: ['memop'],
-  globals: {'memop': 'window.memop'},
+  external: ['engine-3d'],
+  globals: {'cc': 'window.cc'},
   sourceMap: true,
   plugins: [
     buble(),
