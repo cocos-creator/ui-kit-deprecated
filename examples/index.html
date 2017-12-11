@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: #333;
+        color: #888;
+        margin: 0px;
+
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+      }
+
+      .view {
+        position: relative;
+        flex: 1;
+      }
+
+      .toolbar {
+        display: flex;
+        margin-top: 10px;
+
+        font-size: 12px;
+      }
+
+      .toolbar > * {
+        margin-right: 10px;
+      }
+
+      .toolbar > *:last-child {
+        margin-right: 0px;
+      }
+
+      .fit {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+      }
+
+      canvas {
+        background: #09f;
+      }
+
+      canvas:focus {
+        outline: 0;
+      }
+
+      .field {
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .dgui {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+    </style>
+
+    <!--<script src="../node_modules/vconsole/dist/vconsole.min.js"></script>-->
+    <script src="../node_modules/lstats.js/dist/lstats.min.js"></script>
+    <script src="./engine-3d.dev.js"></script>
+    <script src="../dist/ui-kit.dev.js"></script>
+    <script src="./dat.gui.js"></script>
+    <script src="./shell.js"></script>
+  </head>
+
+  <body class="fit">
+    <div id="view" class="view"></div>
+    <div class="toolbar">
+      <div>
+        <div class="field">
+          <input type="checkbox" id="showFPS"></input>FPS
+        </div>
+        <div class="field">
+          <input type="checkbox" id="spector"></input>Spector
+        </div>
+        <div class="field">
+          <input type="checkbox" id="debugger"></input>Debugger
+        </div>
+      </div>
+      <span style="flex: 1"></span>
+      <select id="exampleList">
+        <option value="./src/button.js">Button</option>
+      </select>
+    </div>
+  </body>
+</html>
