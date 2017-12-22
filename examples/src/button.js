@@ -5,15 +5,21 @@
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
 
-  let entity = app.createEntity('button');
+  let entity = app.createEntity('sprite');
   entity.setParent(screen);
   let widget = entity.addComp('Widget');
-  widget.widget = 128;
-  widget.height = 63;
+  widget.width = 128;
+  widget.height = 128;
   widget.setAnchors(0.5, 0.5, 0.5, 0.5);
   let spriteCmp = entity.addComp('Sprite');
 
-  let btn = entity.addComp('Button');
+  let e2 = app.createEntity('button');
+  e2.setParent(screen);
+  let w2 = e2.addComp('Widget');
+  w2.width = 128;
+  w2.height = 128;
+  w2.setAnchors(0.5, 0.5, 0.5, 0.5);
+  let btn = e2.addComp('ui.Button');
   btn.setTargetSprite(spriteCmp);
   btn.setTransition(uikit.BUTTON_TRANSITION_COLOR_TINT);
   btn.setTransitionColor(color4.new(1, 0, 0, 1), uikit.BUTTON_STATE_HIGHLIGHT);
