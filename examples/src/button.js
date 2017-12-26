@@ -1,8 +1,7 @@
 (() => {
-  const app = window.app;
-  const cc = window.cc;
-  const { uikit } = cc;
+  const { cc, app, uikit } = window;
   const { color4 } = cc.math;
+
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
 
@@ -16,9 +15,9 @@
 
   let btn = entity.addComp('Button');
   btn.setTargetSprite(spriteCmp);
-  btn.setTransition(uikit.enums.BUTTON_TRANSITION_COLOR_TINT);
-  btn.setTransitionColor(color4.new(1, 0, 0, 1), uikit.enums.BUTTON_STATE_HIGHLIGHT);
-  btn.setTransitionColor(color4.new(1, 1, 0, 1), uikit.enums.BUTTON_STATE_PRESSED);
-  btn.setTransitionColor(color4.new(1, 0, 1, 1), uikit.enums.BUTTON_STATE_DISABLED);
+  btn.setTransition(uikit.BUTTON_TRANSITION_COLOR_TINT);
+  btn.setTransitionColor(color4.new(1, 0, 0, 1), uikit.BUTTON_STATE_HIGHLIGHT);
+  btn.setTransitionColor(color4.new(1, 1, 0, 1), uikit.BUTTON_STATE_PRESSED);
+  btn.setTransitionColor(color4.new(1, 0, 1, 1), uikit.BUTTON_STATE_DISABLED);
   window.g_testBtn = btn;
 })();

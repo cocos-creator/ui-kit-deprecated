@@ -27,8 +27,12 @@ module.exports = {
   ],
   moduleName,
   banner,
-  external: ['engine-3d'],
-  globals: {'cc': 'window.cc'},
+  external: [
+    'engine-3d'
+  ],
+  globals: {
+    'engine-3d': 'window.cc'
+  },
   sourceMap: true,
   plugins: [
     buble(),
