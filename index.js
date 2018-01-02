@@ -8,6 +8,8 @@ if(!cc) {
   console.error('cc is not defined');
 }
 cc.registerComponent('Button', ButtonComponent);
+cc.registerComponent('Toggle', ToggleComponent);
+cc.registerComponent('ToggleGroup', ToggleGroupComponent);
 
 export default Object.assign({
 }, enums);

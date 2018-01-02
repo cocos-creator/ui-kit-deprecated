@@ -36,13 +36,13 @@
     w3.offsetX = x;
     w3.offsetY = y;
     w3.setAnchors(0.5, 0.5, 0.5, 0.5);
-    let toggleCmp = e3.addComp('ui.Toggle');
+    let toggleCmp = e3.addComp('Toggle');
     toggleCmp.setTargetSprite(spriteCmp);
     toggleCmp.setCheckMark(sprite2);
 
     //set toggle group
 
-    let toggleGroup = parent.getComp('ui.ToggleGroup');
+    let toggleGroup = parent.getComp('ToggleGroup');
     if (toggleGroup) {
       toggleCmp.toggleGroup = toggleGroup;
     }
@@ -55,11 +55,10 @@
   rectTM.width = screen._width;
   rectTM.height = screen._height;
   rectTM.setAnchors(0.5, 0.5, 0.5, 0.5);
-  toggleEntity.addComp('ui.ToggleGroup').allowSwitchOff = true;
+  toggleEntity.addComp('ToggleGroup')//.allowSwitchOff = true;
   // let dumySprite = toggleEntity.addComp('Sprite');
   addToggle(-150, 0, toggleEntity);
   addToggle(0, 0, toggleEntity);
   addToggle(150, 0, toggleEntity);
-
 
 })();

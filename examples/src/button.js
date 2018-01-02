@@ -19,7 +19,8 @@
   w2.width = 128;
   w2.height = 128;
   w2.setAnchors(0.5, 0.5, 0.5, 0.5);
-  let btn = e2.addComp('ui.Button');
+  // let btn = e2.addComp('ui.Button');
+  let btn = e2.addComp('Button');
   btn.setTargetSprite(spriteCmp);
   btn.setTransition(uikit.BUTTON_TRANSITION_COLOR_TINT);
   btn.setTransitionColor(color4.new(1, 0, 0, 1), uikit.BUTTON_STATE_HIGHLIGHT);

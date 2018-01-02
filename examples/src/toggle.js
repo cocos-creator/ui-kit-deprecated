@@ -29,7 +29,7 @@
   w3.width = 128;
   w3.height = 128;
   w3.setAnchors(0.5, 0.5, 0.5, 0.5);
-  let toggleCmp = e3.addComp('ui.Toggle');
+  let toggleCmp = e3.addComp('Toggle');
   toggleCmp.setTargetSprite(spriteCmp);
   toggleCmp.setCheckMark(sprite2);
 
