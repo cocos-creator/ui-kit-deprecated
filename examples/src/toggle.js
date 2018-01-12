@@ -12,7 +12,7 @@
   widget.width = 128;
   widget.height = 128;
   widget.setAnchors(0.5, 0.5, 0.5, 0.5);
-  let spriteCmp = entity.addComp('Sprite');
+  let spriteCmp = entity.addComp('Image');
 
   let e2 = app.createEntity('checkMark');
   e2.setParent(screen);
@@ -20,7 +20,7 @@
   w2.width = 96;
   w2.height = 96;
   w2.setAnchors(0.5, 0.5, 0.5, 0.5);
-  let sprite2 = e2.addComp('Sprite');
+  let sprite2 = e2.addComp('Image');
   sprite2.color = color4.new(1, 0, 0, 1);
 
   let e3 = app.createEntity('toggle');

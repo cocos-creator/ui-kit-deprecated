@@ -10,7 +10,7 @@
   let bgWidget = sliderBg.addComp('Widget');
   bgWidget.width = 300;
   bgWidget.height = 40;
-  let bgSprite = sliderBg.addComp('Sprite');
+  let bgSprite = sliderBg.addComp('Image');
   bgSprite.color = color4.new(1, 1, 1, 1);
 
   let sliderHandle = app.createEntity('handle');
@@ -18,7 +18,7 @@
   let handleWidget = sliderHandle.addComp('Widget');
   handleWidget.width = 20;
   handleWidget.height = 50;
-  let handleSprite = sliderHandle.addComp('Sprite');
+  let handleSprite = sliderHandle.addComp('Image');
   handleSprite.color = color4.new(1, 0, 1, 1);
 
   let sliderEnt = app.createEntity('slider');
