@@ -15,7 +15,7 @@
     widget.offsetX = x;
     widget.offsetY = y;
     widget.setAnchors(0.5, 0.5, 0.5, 0.5);
-    let spriteCmp = entity.addComp('Sprite');
+    let spriteCmp = entity.addComp('Image');
 
     let e2 = app.createEntity('checkMark');
     e2.setParent(parent);
@@ -25,7 +25,7 @@
     w2.offsetX = x;
     w2.offsetY = y;
     w2.setAnchors(0.5, 0.5, 0.5, 0.5);
-    let sprite2 = e2.addComp('Sprite');
+    let sprite2 = e2.addComp('Image');
     sprite2.color = color4.new(1, 0, 0, 1);
 
     let e3 = app.createEntity('toggle');
@@ -55,7 +55,7 @@
   rectTM.width = screen._width;
   rectTM.height = screen._height;
   rectTM.setAnchors(0.5, 0.5, 0.5, 0.5);
-  toggleEntity.addComp('ToggleGroup')//.allowSwitchOff = true;
+  toggleEntity.addComp('ToggleGroup').allowSwitchOff = true;
   // let dumySprite = toggleEntity.addComp('Sprite');
   addToggle(-150, 0, toggleEntity);
   addToggle(0, 0, toggleEntity);

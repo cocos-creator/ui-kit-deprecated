@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/gamedev-js/ui-kit-3d/issues",
   "dependencies": {
-    "engine-3d": "git+ssh://git@github.com:cocos-creator/engine-3d.git#0.8.0"
+    "engine-3d": "git+ssh://git@github.com:cocos-creator/engine-3d.git#0.9.0"
   },
   "devDependencies": {
     "@gamedev-js/rollup-plugin-node-resolve": "^3.0.0",

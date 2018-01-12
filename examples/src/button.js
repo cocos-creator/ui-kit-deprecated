@@ -11,7 +11,7 @@
   widget.width = 128;
   widget.height = 128;
   widget.setAnchors(0.5, 0.5, 0.5, 0.5);
-  let spriteCmp = entity.addComp('Sprite');
+  let spriteCmp = entity.addComp('Image');
 
   let e2 = app.createEntity('button');
   e2.setParent(screen);
