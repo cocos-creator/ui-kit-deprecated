@@ -4,6 +4,24 @@
 
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
+  screen.addComp('Widget');
+
+  let rotation = quat.create();
+  // quat.fromEuler(rotation, 0, 0, 60);
+
+  let dragArea = app.createEntity('area');
+  dragArea.setParent(screen);
+  let areaWidget = dragArea.addComp('Widget');
+  areaWidget.width = 960;
+  areaWidget.height = 640;
+
+  let sliderEnt = app.createEntity('slider');
+  sliderEnt.setParent(screen);
+  let sliderWidget = sliderEnt.addComp('Widget');
+  sliderWidget.width = 300;
+  sliderWidget.height = 20;
+  sliderEnt.setWorldRot(rotation);
+  let sliderComp = sliderEnt.addComp('Slider');
 
   let rotation = quat.create();
   // quat.fromEuler(rotation, 0, 0, 60);
@@ -15,39 +33,47 @@
   tempWidget.height = 640;
 
   let sliderBg = app.createEntity('bg');
-  sliderBg.setParent(tempEnt);
+  sliderBg.setParent(sliderEnt);
   let bgWidget = sliderBg.addComp('Widget');
-  bgWidget.width = 300;
-  bgWidget.height = 20;
+  bgWidget.setAnchors(0, 0, 1, 1);
   // bgWidget.setPivot(0, 0);
-  sliderBg.setWorldRot(rotation);
   let bgSprite = sliderBg.addComp('Image');
   bgSprite.color = color4.new(1, 1, 1, 1);
 
-  let handleArea = app.createEntity('handleArea');
-  handleArea.setParent(tempEnt);
-  let haWidget = handleArea.addComp('Widget');
-  haWidget.width = 300;
-  haWidget.height = 40;
-  // haWidget.setPivot(0, 0);
-  handleArea.setWorldRot(rotation);
+  let fillArea = app.createEntity('fillArea');
+  fillArea.setParent(sliderEnt);
+  let faWidget = fillArea.addComp('Widget');
+  faWidget.setAnchors(0, 0, 1, 1);
 
-  let sliderHandle = app.createEntity('handle');
-  sliderHandle.setParent(handleArea);
-  let handleWidget = sliderHandle.addComp('Widget');
+  let fill = app.createEntity('fill');
+  fill.setParent(fillArea);
+  let fillWidget = fill.addComp('Widget');
+  fillWidget.width = 0;
+  fillWidget.height = 0;
+  fillWidget.setAnchors(0, 0, 0, 1);
+  let fillSprite = fill.addComp('Image');
+  fillSprite.color = color4.new(1, 0, 0, 1);
+
+  let handleArea = app.createEntity('handleArea');
+  handleArea.setParent(sliderEnt);
+  let haWidget = handleArea.addComp('Widget');
+  haWidget.setAnchors(0, 0, 1, 1);
+  // haWidget.setPivot(0, 0);
+
+  let handle = app.createEntity('handle');
+  handle.setParent(handleArea);
+  let handleWidget = handle.addComp('Widget');
   handleWidget.width = 20;
   handleWidget.height = 40;
-  let handleSprite = sliderHandle.addComp('Image');
+  handleWidget.setAnchors(0, 0, 0, 1);
+  handleWidget.marginTop = -10;
+  handleWidget.marginBottom = -10;
+  let handleSprite = handle.addComp('Image');
   handleSprite.color = color4.new(1, 0, 1, 1);
 
-  let sliderEnt = app.createEntity('slider');
-  sliderEnt.setParent(screen);
-  let sliderWidget = sliderEnt.addComp('Widget');
-  sliderWidget.width = 2000;
-  sliderWidget.height = 2000;
-  let sliderComp = sliderEnt.addComp('Slider');
-
-  sliderComp._init(sliderHandle, handleArea, sliderBg);
+  sliderComp.dragArea = dragArea;
+  sliderComp.handle = handle;
+  sliderComp.fill = fill;
   // sliderComp.direction = uikit.VERTICAL;
   // sliderComp.minValue = 100;
   // sliderComp.maxValue = 50;
