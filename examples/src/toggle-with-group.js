@@ -5,6 +5,7 @@
   const { color4 } = cc.math;
   let screenEntity = app.createEntity('screen');
   let screen = screenEntity.addComp('Screen');
+  screenEntity.addComp('Widget');
 
   function addToggle(x, y, parent) {
     let entity = app.createEntity('back');

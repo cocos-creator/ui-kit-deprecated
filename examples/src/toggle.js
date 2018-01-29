@@ -5,6 +5,7 @@
   const { color4 } = cc.math;
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
+  screen.addComp('Widget');
 
   let entity = app.createEntity('back');
   entity.setParent(screen);

@@ -4,6 +4,7 @@
 
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
+  screen.addComp('Widget');
 
   let entity = app.createEntity('sprite');
   entity.setParent(screen);
