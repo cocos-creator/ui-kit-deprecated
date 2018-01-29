@@ -23,9 +23,6 @@
   sliderEnt.setWorldRot(rotation);
   let sliderComp = sliderEnt.addComp('Slider');
 
-  let rotation = quat.create();
-  // quat.fromEuler(rotation, 0, 0, 60);
-
   let tempEnt = app.createEntity('temp');
   tempEnt.setParent(screen);
   let tempWidget = tempEnt.addComp('Widget');
