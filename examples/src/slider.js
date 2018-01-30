@@ -10,10 +10,11 @@
 
   let sliderEnt = app.createEntity('slider');
   sliderEnt.setParent(screen);
-  let sliderComp = sliderEnt.addComp('Slider');
-  sliderComp.width = 300;
-  sliderComp.height = 20;
+  let sliderWidget = sliderEnt.addComp('Widget');
+  sliderWidget.width = 300;
+  sliderWidget.height = 20;
   sliderEnt.setWorldRot(rotation);
+  let sliderComp = sliderEnt.addComp('Slider');
 
   let sliderBg = app.createEntity('bg');
   sliderBg.setParent(sliderEnt);
@@ -54,7 +55,7 @@
   sliderComp.dragArea = screen;
   sliderComp.handle = handle;
   sliderComp.fill = fill;
-  // sliderComp.direction = uikit.VERTICAL;
+  sliderComp.direction = 'vertical';
   // sliderComp.minValue = 100;
   // sliderComp.maxValue = 50;
   window.g_testSlider = sliderEnt;
