@@ -14,10 +14,11 @@
 
   let e2 = app.createEntity('button');
   e2.setParent(screen);
+  let btnWidget = e2.addComp('Widget');
+  btnWidget.width = 128;
+  btnWidget.height = 128;
+  btnWidget.setAnchors(0.5, 0.5, 0.5, 0.5);
   let btn = e2.addComp('Button');
-  btn.width = 128;
-  btn.height = 128;
-  btn.setAnchors(0.5, 0.5, 0.5, 0.5);
   // let btn = e2.addComp('ui.Button');
   btn.setTargetSprite(spriteCmp);
   btn.setTransition('button-transition-color-tint');

@@ -23,10 +23,11 @@
 
   let e3 = app.createEntity('toggle');
   e3.setParent(screen);
+  let toggleWidget = e3.addComp('Widget');
+  toggleWidget.width = 128;
+  toggleWidget.height = 128;
+  toggleWidget.setAnchors(0.5, 0.5, 0.5, 0.5);
   let toggleCmp = e3.addComp('Toggle');
-  toggleCmp.width = 128;
-  toggleCmp.height = 128;
-  toggleCmp.setAnchors(0.5, 0.5, 0.5, 0.5);
   toggleCmp.setTargetSprite(spriteCmp);
   toggleCmp.setCheckMark(sprite2);
 

@@ -7,10 +7,11 @@
 
   let entity = app.createEntity('scrollView');
   entity.setParent(screen);
+  let scrollWidget = entity.addComp('Widget');
+  scrollWidget.width = 2000;
+  scrollWidget.height = 2000;
   let scrollView = entity.addComp('ScrollView');
-  scrollView.width = 2000;
-  scrollView.height = 2000;
-  // scrollView.movementType = uikit.CLAMPED;
+  scrollView.movementType = 'elastic';
   // scrollView.vertical = false;
 
   let view = app.createEntity('view');
