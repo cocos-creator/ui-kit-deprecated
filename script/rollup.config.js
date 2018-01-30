@@ -1,8 +1,10 @@
 'use strict';
 
-const buble = require('rollup-plugin-buble');
 const fsJetpack = require('fs-jetpack');
 const pjson = require('../package.json');
+const resolve = require('@gamedev-js/rollup-plugin-node-resolve');
+const buble = require('rollup-plugin-buble');
+const commonjs = require('rollup-plugin-commonjs');
 
 let banner = `
 /*
@@ -14,27 +16,43 @@ let banner = `
 
 let dest = './dist';
 let file = 'ui-kit';
-let moduleName = 'uikit';
+let name = 'uikit';
+let sourcemap = true;
+let globals = {};
 
 // clear directory
 fsJetpack.dir(dest, { empty: true });
 
 module.exports = {
-  entry: './index.js',
-  targets: [
-    { dest: `${dest}/${file}.dev.js`, format: 'iife' },
-    { dest: `${dest}/${file}.js`, format: 'cjs' },
-  ],
-  moduleName,
-  banner,
+  input: './index.js',
   external: [
     'engine-3d'
   ],
-  globals: {
-    'engine-3d': 'window.cc'
-  },
-  sourceMap: true,
   plugins: [
+    resolve({
+      jsnext: true,
+      main: true,
+      root: process.cwd()
+    }),
+    commonjs(),
     buble(),
-  ]
+  ],
+  output: [
+    {
+      file: `${dest}/${file}.dev.js`,
+      format: 'iife',
+      name,
+      banner,
+      globals,
+      sourcemap,
+    },
+    {
+      file: `${dest}/${file}.js`,
+      format: 'cjs',
+      name,
+      banner,
+      globals,
+      sourcemap,
+    },
+  ],
 };
