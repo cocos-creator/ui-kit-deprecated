@@ -18,7 +18,9 @@ let dest = './dist';
 let file = 'ui-kit';
 let name = 'uikit';
 let sourcemap = true;
-let globals = {};
+let globals = {
+  'engine-3d': 'cc'
+};
 
 // clear directory
 fsJetpack.dir(dest, { empty: true });

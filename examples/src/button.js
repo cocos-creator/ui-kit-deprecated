@@ -10,7 +10,7 @@
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
 
-  // button1
+  // button1 (simple button)
   {
     let ent = app.createEntity('button');
     ent.setParent(screen);
@@ -29,7 +29,7 @@
     button._updateState();
   }
 
-  // button2
+  // button2 (with text)
   {
     let ent = app.createEntity('button');
     ent.setParent(screen);
@@ -46,5 +46,13 @@
     button.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
     button.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     button._updateState();
+
+    let entLabel = app.createEntity('button2');
+    entLabel.setParent(ent);
+    let text = entLabel.addComp('Text');
+    text.setAnchors(0, 0, 1, 1);
+    text.text = 'Foobar';
+    text.color = color4.new(0, 0, 0, 1);
+    text.align = 'middle-center';
   }
 })();
