@@ -7,41 +7,39 @@
   screen.addComp('Screen');
   let screenWidget = screen.getComp('Widget');
 
-  let dragArea = app.createEntity('dragArea');
-  dragArea.setParent(screen);
-  let dragWidget = dragArea.addComp('Widget');
-  dragWidget.width = screenWidget.width;
-  dragWidget.height = screenWidget.height;
-
   let ent = app.createEntity('entity');
   ent.setParent(screen);
   let sprite = ent.addComp('Image');
   sprite.color = color4.create();
-  sprite.width = 300;
-  sprite.height = 40;
+  sprite.width = 350;
+  sprite.height = 80;
   var entEditor = ent.addComp('EditBox');
-  entEditor.setTargetSprite(sprite);
-  entEditor.setTransition('button-transition-color-tint');
-  entEditor.setTransitionColor(color4.new(1, 0, 0, 1), 'button-state-highlight');
-  entEditor.setTransitionColor(color4.new(0, 1, 0, 1), 'button-state-pressed');
-  entEditor.setTransitionColor(color4.new(1, 0, 0, 1), 'button-state-disabled');
-  entEditor.otherArea = dragArea;
+  entEditor.background = ent;
+  entEditor.transition = 'color';
+  entEditor.transitionColors.normal = color4.new(0, 1, 1, 1);
+  entEditor.transitionColors.highlight = color4.new(0.3, 0.3, 0.5, 1);
+  entEditor.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+  entEditor.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+  entEditor._updateState();
 
   let placeHolder = app.createEntity('place');
   placeHolder.setParent(ent);
   let placeText = placeHolder.addComp('Text');
+  placeText.color = color4.new(0.2, 0.2, 0.2, 1);
+  placeText.setMargin(10, 5, 10, 5);
   placeText.setAnchors(0, 0, 1, 1);
 
   let input = app.createEntity('input');
   input.setParent(ent);
   let inputTextComp = input.addComp('Text');
-  inputTextComp.width = 280;
-  inputTextComp.height = 30;
+  inputTextComp.color = color4.new(0, 0, 0, 1);
+  inputTextComp.width = 330;
+  inputTextComp.height = 70;
   inputTextComp.setAnchors(0, 0, 1, 1);
-  inputTextComp.setMargin(5, 5, 5, 5);
-  let inputMask = input.addComp('Mask');
+  inputTextComp.setMargin(10, 5, 10, 5);
 
   placeText.text = 'Enter text here...';
+  entEditor.otherArea = screen;
   entEditor.placeHolder = placeText;
   entEditor.textComp = inputTextComp;
   entEditor.contentType = 'standard';

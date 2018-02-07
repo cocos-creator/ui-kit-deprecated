@@ -41,11 +41,17 @@
   let vScrollBarHandle = app.createEntity('vScrollBarHandle');
   vScrollBarHandle.setParent(vScrollBarArea);
   let vScrollBarHandleSprite = vScrollBarHandle.addComp('Image');
-  vScrollBarHandleSprite.color = color4.new(0, 1, 1, 1);
   vScrollBarHandleSprite.width = 20;
   vScrollBarHandleSprite.height = 20;
   vScrollBarHandleSprite.marginTop = -10;
   vScrollBarHandleSprite.marginBottom = -10;
+  vScrollBar.background = vScrollBarHandle;
+  vScrollBar.transition = 'color';
+  vScrollBar.transitionColors.normal = color4.new(0, 1, 1, 1);
+  vScrollBar.transitionColors.highlight = color4.new(1, 1, 0, 1);
+  vScrollBar.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+  vScrollBar.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+  vScrollBar._updateState();
 
   vScrollBar.dragArea = screen;
   vScrollBar.handle = vScrollBarHandle;
@@ -83,6 +89,13 @@
   hScrollBarHandleSprite.height = 20;
   hScrollBarHandleSprite.marginLeft = -10;
   hScrollBarHandleSprite.marginRight = -10;
+  hScrollBar.background = hScrollBarHandle;
+  hScrollBar.transition = 'color';
+  hScrollBar.transitionColors.normal = color4.new(0, 1, 1, 1);
+  hScrollBar.transitionColors.highlight = color4.new(1, 1, 0, 1);
+  hScrollBar.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+  hScrollBar.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+  hScrollBar._updateState();
 
   hScrollBar.dragArea = screen;
   hScrollBar.handle = hScrollBarHandle;
@@ -94,8 +107,8 @@
   view.setParent(entity);
   let viewSprite = view.addComp('Image');
   viewSprite.color = color4.new(1, 0, 1, 1);
-  viewSprite.width = 200;
-  viewSprite.height = 200;
+  viewSprite.width = 220;
+  viewSprite.height = 220;
   viewSprite.setAnchors(0, 0, 1, 1);
   viewSprite.marginRight = 20;
   viewSprite.marginBottom = 20;
@@ -105,8 +118,8 @@
   content.setParent(view);
   let contentSprite = content.addComp('Image');
   contentSprite.color = color4.new(1, 0, 0, 1);
-  contentSprite.width = 200;
-  contentSprite.height = 300;
+  contentSprite.width = 500;
+  contentSprite.height = 700;
   contentSprite.setPivot(1, 1);
 
   let temp = app.createEntity('temp');

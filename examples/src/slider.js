@@ -12,7 +12,7 @@
   sliderEnt.setParent(screen);
   let sliderWidget = sliderEnt.addComp('Widget');
   sliderWidget.width = 300;
-  sliderWidget.height = 20;
+  sliderWidget.height = 60;
   sliderEnt.setWorldRot(rotation);
   let sliderComp = sliderEnt.addComp('Slider');
 
@@ -45,12 +45,18 @@
   let handle = app.createEntity('handle');
   handle.setParent(handleArea);
   let handleSprite = handle.addComp('Image');
-  handleSprite.color = color4.new(1, 0, 1, 1);
-  handleSprite.width = 20;
-  handleSprite.height = 40;
+  handleSprite.width = 40;
+  handleSprite.height = 80;
   handleSprite.setAnchors(0, 0, 0, 1);
   handleSprite.marginTop = -10;
   handleSprite.marginBottom = -10;
+  sliderComp.background = handle;
+  sliderComp.transition = 'color';
+  sliderComp.transitionColors.normal = color4.new(0, 1, 1, 1);
+  sliderComp.transitionColors.highlight = color4.new(1, 1, 0, 1);
+  sliderComp.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+  sliderComp.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+  sliderComp._updateState();
 
   sliderComp.dragArea = screen;
   sliderComp.handle = handle;
