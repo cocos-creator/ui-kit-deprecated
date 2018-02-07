@@ -10,7 +10,7 @@
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
 
-  // button1 (simple button)
+  // button1 (simple)
   {
     let ent = app.createEntity('button');
     ent.setParent(screen);
