@@ -25,6 +25,7 @@
     toggle.transitionColors.highlight = color4.new(1, 1, 0, 1);
     toggle.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
     toggle.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+    toggle.screen = screen;
 
     let checker = app.createEntity('checker');
     checker.setParent(ent);
@@ -54,6 +55,7 @@
     toggle.transitionColors.highlight = color4.new(1, 1, 0, 1);
     toggle.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
     toggle.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+    toggle.screen = screen
 
     let entBG = app.createEntity('background');
     entBG.setParent(entToggle);

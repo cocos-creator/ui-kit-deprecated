@@ -27,6 +27,7 @@
     button.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
     button.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     button._updateState();
+    button.screen = screen;
   }
 
   // button2 (with text)
@@ -46,6 +47,7 @@
     button.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
     button.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     button._updateState();
+    button.screen = screen;
 
     let entLabel = app.createEntity('label');
     entLabel.setParent(ent);
