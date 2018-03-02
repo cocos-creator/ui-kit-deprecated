@@ -46,11 +46,10 @@
   scrollBar.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
   scrollBar._updateState();
 
-  scrollBar.dragArea = screen;
   scrollBar.handle = handle;
   // scrollBar.direction = 'vertical';
   // scrollBar.reverse = true;
-  // scrollBar.scrollAnchor = 0.3;
-  scrollBar.value = 0.1;
+  // scrollBar.value = 0.3;
+  scrollBar.size = 0.1;
 
 })();
