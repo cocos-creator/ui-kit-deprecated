@@ -10,13 +10,13 @@ import EditBoxComponent from './lib/editBox-component';
 import ScrollViewComponent from './lib/scrollView-component';
 import UISystem from './lib/ui-system';
 
-cc.registerComponent('UIElement', UIElementComponent);
-cc.registerComponent('Button', ButtonComponent);
-cc.registerComponent('Toggle', ToggleComponent);
-cc.registerComponent('ToggleGroup', ToggleGroupComponent);
-cc.registerComponent('Slider', SliderComponent);
-cc.registerComponent('ScrollBar', ScrollBarComponent);
-cc.registerComponent('EditBox', EditBoxComponent);
-cc.registerComponent('ScrollView', ScrollViewComponent);
+cc.registerClass('UIElement', UIElementComponent);
+cc.registerClass('Button', ButtonComponent);
+cc.registerClass('Toggle', ToggleComponent);
+cc.registerClass('ToggleGroup', ToggleGroupComponent);
+cc.registerClass('Slider', SliderComponent);
+cc.registerClass('ScrollBar', ScrollBarComponent);
+cc.registerClass('EditBox', EditBoxComponent);
+cc.registerClass('ScrollView', ScrollViewComponent);
 
 cc.registerSystem('ui', UISystem, 'UIElement', 0);
