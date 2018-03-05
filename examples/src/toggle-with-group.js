@@ -1,62 +1,56 @@
 (() => {
-  const app = window.app;
-  const cc = window.cc;
-  const { ui } = cc;
-  const { color4 } = cc.math;
-  let screenEntity = app.createEntity('screen');
-  let screen = screenEntity.addComp('Screen');
-  screenEntity.addComp('Widget');
+  const { app, cc } = window;
+  const { vec3, color4 } = cc.math;
 
-  function addToggle(x, y, parent) {
-    let entity = app.createEntity('back');
-    entity.setParent(parent);
-    let widget = entity.addComp('Widget');
-    widget.width = 128;
-    widget.height = 128;
-    widget.offsetX = x;
-    widget.offsetY = y;
-    widget.setAnchors(0.5, 0.5, 0.5, 0.5);
-    let spriteCmp = entity.addComp('Image');
+  let camEnt = app.createEntity('camera');
+  vec3.set(camEnt.lpos, 10, 10, 10);
+  camEnt.lookAt(vec3.new(0, 0, 0));
+  camEnt.addComp('Camera');
 
-    let e2 = app.createEntity('checkMark');
-    e2.setParent(parent);
-    let w2 = e2.addComp('Widget');
-    w2.width = 96;
-    w2.height = 96;
-    w2.offsetX = x;
-    w2.offsetY = y;
-    w2.setAnchors(0.5, 0.5, 0.5, 0.5);
-    let sprite2 = e2.addComp('Image');
-    sprite2.color = color4.new(1, 0, 0, 1);
-
-    let e3 = app.createEntity('toggle');
-    e3.setParent(parent);
-    let w3 = e3.addComp('Widget');
-    w3.width = 128;
-    w3.height = 128;
-    w3.offsetX = x;
-    w3.offsetY = y;
-    w3.setAnchors(0.5, 0.5, 0.5, 0.5);
-    let toggleCmp = e3.addComp('Toggle');
-    toggleCmp.setTargetSprite(spriteCmp);
-    toggleCmp.setCheckMark(sprite2);
-
-    //set toggle group
-
-    let toggleGroup = parent.getComp('ToggleGroup');
-    if (toggleGroup) {
-      toggleCmp.toggleGroup = toggleGroup;
-    }
-
-  }
+  let screen = app.createEntity('screen');
+  screen.addComp('Screen');
 
   let toggleEntity = app.createEntity('toggle-group');
-  toggleEntity.setParent(screenEntity);
+  toggleEntity.setParent(screen);
   let rectTM = toggleEntity.addComp('Widget');
   rectTM.width = screen._width;
   rectTM.height = screen._height;
   rectTM.setAnchors(0.5, 0.5, 0.5, 0.5);
   toggleEntity.addComp('ToggleGroup').allowSwitchOff = true;
+
+  function addToggle(x, y, parent) {
+    let toggle = app.createEntity('toggle');
+    toggle.setParent(screen);
+    let image = toggle.addComp('Image');
+    image.width = 40;
+    image.height = 40;
+    image.setOffset(x, y);
+    let toggleComp = toggle.addComp('Toggle');
+    toggleComp.transition = 'color';
+    toggleComp.transitionColors.normal = color4.new(0.8, 0.8, 0.8, 1);
+    toggleComp.transitionColors.highlight = color4.new(1, 1, 0, 1);
+    toggleComp.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+    toggleComp.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+
+    let checker = app.createEntity('checker');
+    checker.setParent(toggle);
+    let checkerImage = checker.addComp('Image');
+    checkerImage.color = color4.new(1, 0, 0, 1);
+    checkerImage.setAnchors(0, 0, 1, 1);
+    checkerImage.setMargin(5, 5, 5, 5);
+
+    toggleComp.background = toggle;
+    toggleComp.checker = checker;
+    toggleComp._updateState();
+    //set toggle group
+
+    let toggleGroup = parent.getComp('ToggleGroup');
+    if (toggleGroup) {
+      toggleComp.toggleGroup = toggleGroup;
+    }
+
+  }
+
   // let dumySprite = toggleEntity.addComp('Sprite');
   addToggle(-150, 0, toggleEntity);
   addToggle(0, 0, toggleEntity);
