@@ -7,7 +7,7 @@ import ToggleGroupComponent from './lib/toggle-group-component';
 import SliderComponent from './lib/slider-component';
 import ScrollBarComponent from './lib/scrollBar-component';
 import EditBoxComponent from './lib/editBox-component';
-import ScrollViewComponent from './lib/scrollView-component';
+import ScrollViewComponent from './lib/scroll-view-component';
 import UISystem from './lib/ui-system';
 
 cc.registerClass('UIElement', UIElementComponent);
