@@ -3,6 +3,11 @@
   const { resl, path } = cc;
   const { color4, vec3 } = cc.math;
 
+  let camEnt = app.createEntity('camera');
+  vec3.set(camEnt.lpos, 10, 10, 10);
+  camEnt.lookAt(vec3.new(0, 0, 0));
+  camEnt.addComp('Camera');
+
   let screen = app.createEntity('screen');
   screen.addComp('Screen');
   let screenWidget = screen.getComp('Widget');
@@ -16,9 +21,9 @@
   var entEditor = ent.addComp('EditBox');
   entEditor.background = ent;
   entEditor.transition = 'color';
-  entEditor.transitionColors.normal = color4.new(0, 1, 1, 1);
-  entEditor.transitionColors.highlight = color4.new(0.3, 0.3, 0.5, 1);
-  entEditor.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+  entEditor.transitionColors.normal = color4.new(1, 1, 1, 1);
+  entEditor.transitionColors.highlight = color4.new(0.3, 1, 1, 1);
+  entEditor.transitionColors.pressed = color4.new(0.8, 0.8, 0.8, 1);
   entEditor.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
   entEditor._updateState();
 
@@ -36,10 +41,9 @@
   inputTextComp.width = 330;
   inputTextComp.height = 70;
   inputTextComp.setAnchors(0, 0, 1, 1);
-  inputTextComp.setMargin(10, 5, 10, 5);
+  inputTextComp.setMargin(5, 5, 5, 5);
 
   placeText.text = 'Enter text here...';
-  entEditor.otherArea = screen;
   entEditor.placeHolder = placeText;
   entEditor.textComp = inputTextComp;
   entEditor.contentType = 'standard';
