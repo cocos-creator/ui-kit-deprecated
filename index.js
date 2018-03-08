@@ -6,7 +6,7 @@ import ToggleComponent from './lib/toggle-component';
 import ToggleGroupComponent from './lib/toggle-group-component';
 import SliderComponent from './lib/slider-component';
 import ScrollBarComponent from './lib/scroll-bar-component';
-import EditBoxComponent from './lib/editBox-component';
+import EditBoxComponent from './lib/edit-box-component';
 import ScrollViewComponent from './lib/scroll-view-component';
 import UISystem from './lib/ui-system';
 
