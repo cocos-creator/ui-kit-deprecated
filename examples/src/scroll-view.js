@@ -135,6 +135,6 @@
   scrollView.movementType = 'elastic';
   // scrollView.vertical = false;
   // scrollView.horizontal = false;
-  scrollView.vScroll = vScrollBar;
-  scrollView.hScroll = hScrollBar;
+  scrollView.vScroll = vScrollBarEnt;
+  scrollView.hScroll = hScrollBarEnt;
 })();
