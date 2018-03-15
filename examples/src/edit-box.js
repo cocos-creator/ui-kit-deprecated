@@ -44,8 +44,8 @@
   inputTextComp.setMargin(5, 5, 5, 5);
 
   placeText.text = 'Enter text here...';
-  entEditor.placeHolder = placeText;
-  entEditor.textComp = inputTextComp;
+  entEditor.placeHolder = placeHolder;
+  entEditor.textComp = input;
   entEditor.contentType = 'standard';
   entEditor.lineType = 'single-line';
   entEditor.maxLength = 10;
