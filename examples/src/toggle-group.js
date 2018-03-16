@@ -46,7 +46,7 @@
 
     let toggleGroup = parent.getComp('ToggleGroup');
     if (toggleGroup) {
-      toggleComp.toggleGroup = toggleGroup;
+      toggleComp.toggleGroup = parent;
     }
 
   }

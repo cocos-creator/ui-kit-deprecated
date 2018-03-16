@@ -18,7 +18,7 @@
   sprite.color = color4.create();
   sprite.width = 350;
   sprite.height = 80;
-  var entEditor = ent.addComp('EditBox');
+  let entEditor = ent.addComp('EditBox');
   entEditor.background = ent;
   entEditor.transition = 'color';
   entEditor.transitionColors.normal = color4.new(1, 1, 1, 1);
@@ -33,6 +33,7 @@
   placeText.color = color4.new(0.2, 0.2, 0.2, 1);
   placeText.setMargin(10, 5, 10, 5);
   placeText.setAnchors(0, 0, 1, 1);
+  placeText.text = 'Enter text here...';
 
   let input = app.createEntity('input');
   input.setParent(ent);
@@ -43,7 +44,6 @@
   inputTextComp.setAnchors(0, 0, 1, 1);
   inputTextComp.setMargin(5, 5, 5, 5);
 
-  placeText.text = 'Enter text here...';
   entEditor.placeHolder = placeHolder;
   entEditor.textComp = input;
   entEditor.contentType = 'standard';
