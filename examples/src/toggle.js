@@ -15,26 +15,26 @@
     let ent = app.createEntity('toggle');
     ent.setParent(screen);
     let image = ent.addComp('Image');
-    image.width = 40;
-    image.height = 40;
+    image._width = 40;
+    image._height = 40;
     image.setOffset(0, 50);
     image.setAnchors(0.5, 0.5, 0.5, 0.5);
     let toggle = ent.addComp('Toggle');
-    toggle.transition = 'color';
-    toggle.transitionColors.normal = color4.new(0.8, 0.8, 0.8, 1);
-    toggle.transitionColors.highlight = color4.new(1, 1, 0, 1);
-    toggle.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
-    toggle.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+    toggle._transition = 'color';
+    toggle._transitionColors.normal = color4.new(0.8, 0.8, 0.8, 1);
+    toggle._transitionColors.highlight = color4.new(1, 1, 0, 1);
+    toggle._transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+    toggle._transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
 
     let checker = app.createEntity('checker');
     checker.setParent(ent);
     let checkerImage = checker.addComp('Image');
-    checkerImage.color = color4.new(1, 0, 0, 1);
+    checkerImage._color = color4.new(1, 0, 0, 1);
     checkerImage.setAnchors(0, 0, 1, 1);
     checkerImage.setMargin(5, 5, 5, 5);
 
-    toggle.background = ent;
-    toggle.checker = checker;
+    toggle._background = ent;
+    toggle._checker = checker;
     toggle._updateState();
   }
 
@@ -44,29 +44,29 @@
     entToggle.setParent(screen);
 
     let widget = entToggle.addComp('Widget');
-    widget.width = 200;
-    widget.height = 40;
+    widget._width = 200;
+    widget._height = 40;
     widget.setOffset(0, -50);
 
     let toggle = entToggle.addComp('Toggle');
-    toggle.transition = 'color';
-    toggle.transitionColors.normal = color4.new(0.8, 0.8, 0.8, 1);
-    toggle.transitionColors.highlight = color4.new(1, 1, 0, 1);
-    toggle.transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
-    toggle.transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
+    toggle._transition = 'color';
+    toggle._transitionColors.normal = color4.new(0.8, 0.8, 0.8, 1);
+    toggle._transitionColors.highlight = color4.new(1, 1, 0, 1);
+    toggle._transitionColors.pressed = color4.new(0.5, 0.5, 0.5, 1);
+    toggle._transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
 
     let entBG = app.createEntity('background');
     entBG.setParent(entToggle);
     let image = entBG.addComp('Image');
-    image.width = 40;
-    image.height = 40;
+    image._width = 40;
+    image._height = 40;
     image.setAnchors(0, 1, 0, 1);
     image.setPivot(0, 1);
 
     let entChecker = app.createEntity('checker');
     entChecker.setParent(entBG);
     let checkerImage = entChecker.addComp('Image');
-    checkerImage.color = color4.new(1, 0, 0, 1);
+    checkerImage._color = color4.new(1, 0, 0, 1);
     checkerImage.setAnchors(0, 0, 1, 1);
     checkerImage.setMargin(5, 5, 5, 5);
 
@@ -75,13 +75,13 @@
     let text = entLabel.addComp('Text');
     text.setAnchors(0, 0, 1, 1);
     text.setMargin(45, 5, 5, 5);
-    text.text = 'Foobar';
-    text.color = color4.new(0.1, 0.1, 0.1, 1);
-    text.align = 'left-center';
+    text._text = 'Foobar';
+    text._color = color4.new(0.1, 0.1, 0.1, 1);
+    text._align = 'left-center';
 
     //
-    toggle.background = entBG;
-    toggle.checker = entChecker;
+    toggle._background = entBG;
+    toggle._checker = entChecker;
     toggle._updateState();
   }
 
