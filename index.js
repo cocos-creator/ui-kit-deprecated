@@ -8,6 +8,7 @@ import SliderComponent from './lib/slider-component';
 import ScrollBarComponent from './lib/scroll-bar-component';
 import EditBoxComponent from './lib/edit-box-component';
 import ScrollViewComponent from './lib/scroll-view-component';
+import DropDownComponent from './lib/dropDown-component';
 import UISystem from './lib/ui-system';
 
 cc.registerClass('UIElement', UIElementComponent);
@@ -18,5 +19,6 @@ cc.registerClass('Slider', SliderComponent);
 cc.registerClass('ScrollBar', ScrollBarComponent);
 cc.registerClass('EditBox', EditBoxComponent);
 cc.registerClass('ScrollView', ScrollViewComponent);
+cc.registerClass('DropDown', DropDownComponent);
 
 cc.registerSystem('ui', UISystem, 'UIElement', 0);
