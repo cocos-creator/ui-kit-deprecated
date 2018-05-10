@@ -20,7 +20,7 @@
     image.setOffset(0, 50);
     image.setAnchors(0.5, 0.5, 0.5, 0.5);
     let button = ent.addComp('Button');
-    button._background = ent;
+    button._background = image;
     button._transition = 'color';
     button._transitionColors.normal = color4.new(0.8, 0.8, 0.8, 1);
     button._transitionColors.highlight = color4.new(1, 1, 0, 1);
@@ -48,7 +48,7 @@
     text._color = color4.new(0, 0, 0, 1);
     text._align = 'middle-center';
 
-    button._background = ent;
+    button._background = image;
     button._transition = 'color';
     button._transitionColors.normal = color4.new(1, 1, 1, 1);
     button._transitionColors.highlight = color4.new(1, 1, 0, 1);

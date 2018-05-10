@@ -73,7 +73,7 @@
   vScrollBarHandleSprite._marginTop = -10;
   vScrollBarHandleSprite._marginBottom = -10;
 
-  vScrollBar._background = vScrollBarHandle;
+  vScrollBar._background = vScrollBarHandleSprite;
   vScrollBar._transition = 'color';
   vScrollBar._transitionColors.normal = color4.new(0, 1, 1, 1);
   vScrollBar._transitionColors.highlight = color4.new(1, 1, 0, 1);
@@ -82,7 +82,7 @@
   vScrollBar._updateState();
 
   vScrollBar._dragArea = screen;
-  vScrollBar._handle = vScrollBarHandle;
+  vScrollBar._handle = vScrollBarHandleSprite;
   vScrollBar._direction = 'vertical';
   vScrollBar._reverse = true;
   // vScrollBar.scrollPos = 0.3;
@@ -116,7 +116,7 @@
   hScrollBarHandleSprite.height = 20;
   hScrollBarHandleSprite.marginLeft = -10;
   hScrollBarHandleSprite.marginRight = -10;
-  hScrollBar._background = hScrollBarHandle;
+  hScrollBar._background = hScrollBarHandleSprite;
   hScrollBar._transition = 'color';
   hScrollBar._transitionColors.normal = color4.new(0, 1, 1, 1);
   hScrollBar._transitionColors.highlight = color4.new(1, 1, 0, 1);
@@ -125,13 +125,13 @@
   hScrollBar._updateState();
 
   hScrollBar._dragArea = screen;
-  hScrollBar._handle = hScrollBarHandle;
+  hScrollBar._handle = hScrollBarHandleSprite;
   hScrollBar._direction = 'horizontal';
   // hScrollBar.reverse = true;
   // hScrollBar.scrollPos = 0.3;
 
-  scrollView._content = content;
-  scrollView._viewPort = view;
+  scrollView._content = contentSprite;
+  scrollView._viewPort = viewSprite;
   scrollView._movementType = 'elastic';
   // scrollView.vertical = false;
   // scrollView.horizontal = false;

@@ -39,8 +39,8 @@
     checkerImage.setAnchors(0, 0, 1, 1);
     checkerImage.setMargin(5, 5, 5, 5);
 
-    toggleComp._background = toggle;
-    toggleComp._checker = checker;
+    toggleComp._background = image;
+    toggleComp._checker = checkerImage;
     toggleComp._updateState();
     //set toggle group
 

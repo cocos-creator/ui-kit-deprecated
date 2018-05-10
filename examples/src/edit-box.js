@@ -19,7 +19,7 @@
   sprite._width = 350;
   sprite._height = 80;
   let entEditor = ent.addComp('EditBox');
-  entEditor._background = ent;
+  entEditor._background = sprite;
   entEditor._transition = 'color';
   entEditor._transitionColors.normal = color4.new(1, 1, 1, 1);
   entEditor._transitionColors.highlight = color4.new(0.3, 1, 1, 1);
