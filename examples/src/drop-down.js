@@ -17,7 +17,7 @@
   image._width = 300;
   image._height = 50;
   let dropdown = ent.addComp('DropDown');
-  dropdown._background = ent;
+  dropdown._background = image;
   dropdown._transition = 'color';
   dropdown._transitionColors.normal = color4.new(1, 1, 1, 1);
   dropdown._transitionColors.highlight = color4.new(1, 1, 0, 1);
@@ -40,10 +40,10 @@
   arrowImg.setAnchors(0.7, 0.4, 0.9, 0.6);
 
   let optionTexts = ['pink', 'red', 'yellow'];
-  let optionSprites = [null, null, null, null, null];
+  let optionSprites = [null, null, null, null];
 
   dropdown._labComp = text;
-  dropdown._imageComp = image;
+  dropdown._imageComp = arrowImg;
   dropdown._optionTexts = optionTexts;
   dropdown._optionSprites = optionSprites;
 })();

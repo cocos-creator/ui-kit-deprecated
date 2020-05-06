@@ -67,8 +67,8 @@
     sliderComp._transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     sliderComp._updateState();
 
-    sliderComp._handle = handle;
-    sliderComp._fill = fill;
+    sliderComp._handle = handleSprite;
+    sliderComp._fill = fillSprite;
   }
 
   // toggle vertical
@@ -127,8 +127,8 @@
     sliderComp._transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     sliderComp._updateState();
 
-    sliderComp._handle = handle;
-    sliderComp._fill = fill;
+    sliderComp._handle = handleSprite;
+    sliderComp._fill = fillSprite;
     sliderComp._reverse = true;
     sliderComp._progress = 0.3;
   }

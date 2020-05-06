@@ -17,7 +17,7 @@
   {
     let ent = app.createEntity('ent');
     ent.setParent(screen);
-    // ent.setWorldRot(rot);
+    ent.setWorldRot(rot);
     let bgSprite = ent.addComp('Image');
     bgSprite._color = color4.new(1, 1, 1, 1);
     bgSprite.setOffset(-150, 0);
@@ -50,7 +50,7 @@
     scrollBar._transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     scrollBar._updateState();
 
-    scrollBar._handle = handle;
+    scrollBar._handle = handleSprite;
     scrollBar._size = 0.1;
   }
 
@@ -58,7 +58,7 @@
   {
     let ent = app.createEntity('ent');
     ent.setParent(screen);
-    // ent.setWorldRot(rot);
+    ent.setWorldRot(rot);
     let bgSprite = ent.addComp('Image');
     bgSprite._color = color4.new(1, 1, 1, 1);
     bgSprite._width = 60;
@@ -91,7 +91,7 @@
     scrollBar._transitionColors.disabled = color4.new(0.2, 0.2, 0.2, 1);
     scrollBar._updateState();
 
-    scrollBar._handle = handle;
+    scrollBar._handle = handleSprite;
     scrollBar._direction = 'vertical';
     scrollBar._reverse = true;
     scrollBar._size = 0.1;
