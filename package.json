@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@gamedev-js/rollup-plugin-node-resolve": "^3.0.0",
-    "electron": "^1.8.1",
+    "electron": "^9.1.0",
     "fs-jetpack": "^1.1.0",
     "lstats.js": "^1.2.7",
     "preview-server": "^1.1.2",
